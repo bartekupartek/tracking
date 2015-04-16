@@ -2,11 +2,14 @@ source 'https://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.1'
+gem 'rails', '4.2.0'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
+
+gem 'bootstrap-sass'
+
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
@@ -34,3 +37,18 @@ group :development, :test do
   gem 'spring'
 end
 
+gem 'angular_rails_csrf'
+gem 'angular-rails-templates'
+
+source 'https://rails-assets.org' do
+  gem 'rails-assets-angular'
+  gem 'rails-assets-angular-animate'
+  gem 'rails-assets-ngstorage'
+  gem 'rails-assets-angular-resource'
+  gem 'rails-assets-angular-ui-router'
+  gem 'rails-assets-angular-bootstrap'
+  gem 'rails-assets-ng-lodash'
+end
+
+
+gem 'sprockets', '2.11.0'
