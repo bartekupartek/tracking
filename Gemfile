@@ -47,8 +47,9 @@ source 'https://rails-assets.org' do
   gem 'rails-assets-angular-resource'
   gem 'rails-assets-angular-ui-router'
   gem 'rails-assets-angular-bootstrap'
-  gem 'rails-assets-ng-lodash'
+  gem 'rails-assets-angular-timer'
+  gem 'rails-assets-angular-momentjs'
+  gem 'rails-assets-humanize-duration'
 end
-
 
 gem 'sprockets', '2.11.0'

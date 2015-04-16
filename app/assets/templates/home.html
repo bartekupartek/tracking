@@ -1,5 +1,24 @@
 <div class="container">
-  <ul>
-    <li ng-repeat="task in tasks">{{task}}</li>
-  </ul>
+  <div class="row">
+    <div class="col-xs-4">
+      <timer start-time="task.timer" interval="1000" language="en">{{days}} days, {{hours}} hours, {{minutes}} minutes, {{seconds}} seconds.</timer>
+      <br>
+      <div class="input-group">
+        <input type="text" ng-model="task.name" class="form-control" placeholder="What are you working on?"></input>
+        <span class="input-group-btn">
+          <button ng-click="toggleTimer()" class="btn btn-default" type="button">
+            {{ task.isCounting ? 'Stop' : 'Go' }}
+          </button>
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-12">
+      <ul class="list-group">
+        <li class="list-group-item" ng-repeat="task in tasks | orderBy:'task.updated_at_int':false">{{task.name}} {{task.task_dates_to_s}}</li>
+      </ul>
+    </div>
+  </div>
 </div>

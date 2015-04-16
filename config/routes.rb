@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  resources :tasks do
+    put "stop"
+  end
+
   root 'application#index'
 
   get "*path.html" => "application#index", :layout => 0

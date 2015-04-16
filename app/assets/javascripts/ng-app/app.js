@@ -2,7 +2,8 @@ angular
   .module('trackingApp', [
     'ngAnimate',
     'ui.router',
-    'templates'
+    'templates',
+    'timer'
   ])
   .config(['$stateProvider', '$urlRouterProvider', '$locationProvider', function($stateProvider, $urlRouterProvider, $locationProvider) {
 
@@ -10,7 +11,14 @@ angular
       .state('home', {
         url: '/',
         templateUrl: 'home.html',
-        controller: 'HomeCtrl'
+        controller: 'HomeCtrl',
+        resolve: {
+          tasksPromise: ['taskService',
+            function(taskService) {
+              return taskService.getAll();
+            }
+          ]
+        }
       });
 
     // default fallback route
